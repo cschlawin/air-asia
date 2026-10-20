@@ -8,3 +8,222 @@ Verification performed by AI: Checked filenames, local links and assets, form ac
 Student review: Review the source, test it in Codespaces, and revise this disclosure to match your own verification before submitting.
 
 Revision: Formatted HTML/CSS with two-space indentation and an 80-column target. Enabled Codespaces editor word wrap. Made login branding non-interactive; later-page brand links remain. This static simulation has no sessions or direct-URL protection.
+
+
+PROMPTS AND CONVERSATION TRANSCRIPT
+Added: October 20, 2026
+Project: IS 6465 Air Asia Website
+Repository: https://github.com/cschlawin/air-asia
+
+TRANSCRIPT SCOPE AND ACCURACY
+This is a task-focused record of the visible HW2 conversation. User prompts
+are reproduced below with presentation formatting normalized (for example,
+removing pasted backslashes). Assistant responses are explicitly identified
+as summaries or verbatim excerpts. This is not a complete raw chat export:
+routine progress updates, tool output, attachment metadata, and account
+connection exchanges are condensed or omitted. No earlier HW1 conversation
+is presented as a verbatim transcript.
+
+SOURCE MATERIAL PROVIDED
+- HW1-Building Web Page Wire Frames-Air Asia_Cody Schlawin 10-8-26.pdf
+- Air Asia ChatGPT Requirements Analysis.pdf
+
+1. INITIAL WEBSITE CREATION PROMPT
+User prompt (formatting normalized):
+
+Need to create a static Website named 'Air Asia' in GitHub within a new
+repository. The website Air Asia Rewards Redemption System will use HTML
+and CSS, saved as PHP files.
+Review Air Asia ChatGPT Requirements Analysis document
+Review No PHP, database, or JavaScript is required.
+Development Environment:
+GitHub Repository using GitHub Codespaces
+Repository Name: Air Asia
+Use the following organized folder structure:
+
+airasia-hw2/
+  login.php
+  card-list.php
+  card-details.php
+  card-add.php
+  card-update.php
+  ai-use.txt
+  css/
+    styles.css
+  images/
+    gift-card.png
+
+Create the following five pages using the exact filenames shown below.
+
+Login Page - login.php:
+Include username and password fields and a Login button. The Login button
+must direct the user to card-list.php.
+
+Gift Card List Page - card-list.php:
+Display a list of gift cards. Each gift card must show an image, card name,
+and points required. The gift card image or name must link to
+card-details.php. Include a link to card-add.php.
+
+Gift Card Details Page - card-details.php:
+Display the details of one gift card, including its image, card name, card
+type, card value, and points required. Include a link to card-update.php.
+Only one details page is required. All gift-card links on the list page may
+lead to this one page.
+
+Add Gift Card Page - card-add.php:
+Create an HTML form for adding a new gift card. Include labeled fields for
+Card Name, Card Type, Card Value, and Points Required. When the form is
+submitted, direct the user to card-list.php.
+
+Update Gift Card Page - card-update.php:
+Create an HTML form for updating an existing gift card. Include labeled,
+prepopulated fields for Card Name, Card Type, Card Value, and Points
+Required. When the form is submitted, direct the user to card-list.php.
+
+Because this is a static HTML and CSS assignment, form submission does not
+need to save information. The form action should simply simulate the next
+step in the workflow by taking the user to card-list.php.
+
+Required Workflow
+Use hyperlinks and form actions to connect the pages so a user can move
+through the application logically.
+
+1. login.php -> card-list.php
+2. card-list.php -> card-details.php
+3. card-list.php -> card-add.php
+4. card-details.php -> card-update.php
+5. card-add.php -> card-list.php
+6. card-update.php -> card-list.php
+
+You may add Back, Cancel, or navigation links where helpful.
+
+Assistant response / work summary:
+Reviewed both supplied PDFs. Used the current five-page HW2 scope rather
+than adding the customer, delete, redemption, and role features described
+in the broader analysis. Generated the five HTML pages with PHP extensions,
+a shared external CSS file, a sample gift-card PNG, this disclosure, and a
+README. Used six sample brands and one shared Amazon details page. Checked
+source-level links, assets, form labels, actions, and update values.
+Attempted automated browser testing, but it could not run because the
+runtime lacked a browser executable and the browser download failed.
+The assistant did not complete or claim successful visual browser testing.
+
+2. GITHUB SETUP AND UPLOAD
+User prompts (verbatim text; separate messages):
+"Is the GitHub Plugin installed and connected"
+"Yes it shows connected"
+"https://github.com/cschlawin/air-asia"
+
+Assistant response / work summary:
+Verified the connected GitHub account. The available integration did not
+provide a repository-creation action, so the user created the repository
+and supplied its URL. Uploaded the website to the main branch and verified
+the commit. Explained how to open Codespaces and preview login.php using:
+php -S 0.0.0.0:8000 -t airasia-hw2
+
+Assistant response excerpt (verbatim):
+"All five pages, CSS, image, and ai-use.txt are included. Source checks
+passed; browser visual testing remains."
+
+3. SOURCE READABILITY AND LOGIN HEADER REVISION
+User prompt (formatting normalized):
+
+Overall the website's visually appealing but a few minor revisions are
+required:
+
+1. Update the code in Codespaces so it is readable in the given screen
+width without having to scroll sideways, also ensure proper indentation
+in code.
+2. Also if I click on the top left Air Asia Rewards label as shown in the
+attached image, it allows me access to the card list without the required
+login. Revise code to only allow users that are logged in to use this
+label/button in order to go back to the card list page.
+
+Assistant response / work summary:
+Formatted the five HTML files and CSS using two-space indentation and an
+80-column target. Added VS Code / Codespaces settings to enable editor
+word wrapping. Replaced the login page's brand hyperlink with a
+non-interactive element; retained the return-to-list brand link on the
+later pages. Verified that form controls, sample values, and image paths
+were preserved. Committed and pushed the changes to main.
+The supplied screenshot path was unavailable, so the assistant inspected
+the login source to identify the bypass.
+
+Assistant response excerpt (verbatim):
+"The header bypass is fixed. Enforcing login against direct URLs requires
+authentication, which is outside the HTML/CSS-only assignment."
+
+Scope clarification:
+This change simulates the intended navigation; it does not establish an
+authenticated user or protect direct access to card-list.php. No sessions,
+PHP logic, database, or JavaScript were added.
+
+4. COMMIT CONFIRMATION
+User prompt (verbatim):
+"I need to commit the code to the GitHub Repository to allow my instructor
+to review my work"
+
+Assistant response / work summary:
+Verified that the latest changes were already committed and pushed to main
+and that the repository was public. Provided the repository URL for
+instructor review. Confirmed the latest revision commit at that time:
+ca743ecc484ed1ce88e05673f76172bd60183e8d
+Message: Format source for Codespaces and remove login header bypass
+
+5. REQUIREMENTS VALIDATION
+User prompt (formatting normalized):
+
+Review and validate the requirements below are all met.
+
+- Use PHP file extensions (.php) for all required web pages. At this stage,
+  the files should contain HTML and CSS only. Do not use PHP programming
+  logic, databases, or JavaScript yet.
+- Use the exact required filenames.
+- Use an external CSS file and link it to all pages.
+- Place images in an images folder and CSS in a css folder.
+- Use the provided gift-card image or another appropriate gift-card image.
+- Use realistic sample gift-card data.
+- Include labels for every form control.
+- Do not include Card ID as an editable form field because it is
+  automatically generated.
+- You do not need to create a Delete Card page for HW2.
+- Make sure all pages, images, hyperlinks, and form actions work correctly
+  in your browser.
+- Do not include irrelevant or unused files. Points may be deducted for
+  clutter.
+
+Assistant response excerpt (verbatim):
+"All source-code requirements pass. Browser testing remains unverified."
+
+Assistant response / work summary:
+Read the current repository tree and all five pages, the stylesheet, and
+the disclosure. Programmatically verified the five exact page filenames,
+absence of PHP tags and script elements, the shared stylesheet link on
+every page, existing local hyperlink/image/form targets, labels for all
+10 input/select controls, no editable Card ID, and all six required
+navigation transitions. Confirmed the assignment folder contains exactly
+the eight requested files and verified that the local gift-card PNG
+decodes. The README and editor settings serve documentation and
+Codespaces readability purposes.
+Asked the user to complete the login, details/update/save, and add/submit
+flows in the Codespaces browser preview and confirm image display.
+The user described the site as visually appealing, but this transcript
+contains no explicit confirmation that every browser workflow passed.
+
+6. AI DISCLOSURE UPDATE
+User prompt (verbatim):
+"Add prompts and transcripts to ai-use.txt document for instructor review."
+
+Assistant response / work summary:
+Preserved the existing disclosure and appended this prompt and transcript
+record for instructor review. The transcript distinguishes exact excerpts
+from summaries and preserves the outstanding browser-testing limitation.
+
+AI CONTRIBUTION AND STUDENT REVIEW
+AI generated the implementation and supporting documentation and performed
+the source checks described above. The user supplied the assignment scope,
+reference PDFs, GitHub repository, visual feedback, and requested
+revisions. This record does not claim that the student independently wrote
+the generated code or completed unreported tests. The student should
+review and understand the code, complete browser testing, and ensure this
+disclosure meets the instructor's AI-use requirements.
