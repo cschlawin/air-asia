@@ -6,3 +6,5 @@ Scope decision: The analysis and earlier wireframes mention additional customer,
 Implementation: HTML documents use PHP extensions only. Forms use GET to simulate navigation. Login inputs intentionally omit name attributes so sample credentials are not placed in the URL. No authentication, saving, or redemption is performed. All six list entries lead to the same Amazon sample details page, as permitted.
 Verification performed by AI: Checked filenames, local links and assets, form actions and field labels, prepopulated update values, and absence of PHP tags and scripts. Browser rendering could not be completed because the available runtime had no browser executable and the browser download failed. Responsive layouts require a final visual check in Codespaces.
 Student review: Review the source, test it in Codespaces, and revise this disclosure to match your own verification before submitting.
+
+Revision: Formatted HTML/CSS with two-space indentation and an 80-column target. Enabled Codespaces editor word wrap. Made login branding non-interactive; later-page brand links remain. This static simulation has no sessions or direct-URL protection.

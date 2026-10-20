@@ -1,3 +1,117 @@
 <!DOCTYPE html>
-<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Update Gift Card | Air Asia</title><link rel="stylesheet" href="css/styles.css"></head><body><a class="skip-link" href="#main">Skip to content</a>
-<header class="site-header"><div class="header-inner"><a class="brand" href="card-list.php" aria-label="Air Asia Rewards gift cards"><span class="brand-mark">AirAsia</span><span><strong>Air Asia Rewards</strong><small>Gift Card Redemption</small></span></a><nav aria-label="Main navigation"><a href="card-list.php">Gift Cards</a><a href="login.php">Sign out</a></nav></div></header><main id="main"><a class="back-link" href="card-list.php">← Back to Gift Cards</a><div class="form-layout"><section class="panel form-panel"><span class="eyebrow">GIFT CARD MANAGEMENT</span><h1>Update Gift Card</h1><p class="muted">Modify the sample gift card information below. All fields are required.</p><form action="card-list.php" method="get"><div class="field"><label for="card-name">Card Name <span aria-hidden="true">*</span></label><input id="card-name" name="cardName" type="text" maxlength="100" placeholder="Enter gift card name" value="Amazon Gift Card" required></div><div class="field"><label for="card-type">Card Type <span aria-hidden="true">*</span></label><select id="card-type" name="cardType" required><option value="Retail" selected>Retail</option><option value="Dining">Dining</option><option value="Entertainment">Entertainment</option><option value="Travel">Travel</option></select></div><div class="form-row"><div class="field"><label for="card-value">Card Value (USD) <span aria-hidden="true">*</span></label><input id="card-value" name="cardValue" type="number" min="0.01" step="0.01" placeholder="25.00" value="25.00" required></div><div class="field"><label for="points">Points Required <span aria-hidden="true">*</span></label><input id="points" name="points" type="number" min="1" step="1" placeholder="2000" value="2000" required></div></div><div class="form-actions"><button class="button" type="submit">Save Changes</button><a class="button secondary" href="card-list.php">Cancel</a></div></form><p class="demo-note">This demo returns to the gift card list. Changes are not saved.</p></section><aside class="form-aside"><span class="eyebrow">A LITTLE SOMETHING EXTRA</span><h2>Great rewards start here.</h2><img src="images/gift-card.png" alt="Red rewards gift card"><p>Give every reward a clear name, category, value, and points requirement.</p></aside></div></main><footer class="site-footer"><span>Air Asia Rewards Redemption System</span><span>IS 6465 · Static coursework prototype</span></footer></body></html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Update Gift Card | Air Asia</title>
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <header class="site-header">
+      <div class="header-inner">
+        <a
+          class="brand"
+          href="card-list.php"
+          aria-label="Air Asia Rewards gift cards"
+          ><span class="brand-mark">AirAsia</span
+          ><span
+            ><strong>Air Asia Rewards</strong
+            ><small>Gift Card Redemption</small></span
+          ></a
+        >
+        <nav aria-label="Main navigation">
+          <a href="card-list.php">Gift Cards</a><a href="login.php">Sign out</a>
+        </nav>
+      </div>
+    </header>
+    <main id="main">
+      <a class="back-link" href="card-list.php">← Back to Gift Cards</a>
+      <div class="form-layout">
+        <section class="panel form-panel">
+          <span class="eyebrow">GIFT CARD MANAGEMENT</span>
+          <h1>Update Gift Card</h1>
+          <p class="muted">
+            Modify the sample gift card information below. All fields are
+            required.
+          </p>
+          <form action="card-list.php" method="get">
+            <div class="field">
+              <label for="card-name"
+                >Card Name <span aria-hidden="true">*</span></label
+              ><input
+                id="card-name"
+                name="cardName"
+                type="text"
+                maxlength="100"
+                placeholder="Enter gift card name"
+                value="Amazon Gift Card"
+                required
+              />
+            </div>
+            <div class="field">
+              <label for="card-type"
+                >Card Type <span aria-hidden="true">*</span></label
+              ><select id="card-type" name="cardType" required>
+                <option value="Retail" selected>Retail</option>
+                <option value="Dining">Dining</option>
+                <option value="Entertainment">Entertainment</option>
+                <option value="Travel">Travel</option>
+              </select>
+            </div>
+            <div class="form-row">
+              <div class="field">
+                <label for="card-value"
+                  >Card Value (USD) <span aria-hidden="true">*</span></label
+                ><input
+                  id="card-value"
+                  name="cardValue"
+                  type="number"
+                  min="0.01"
+                  step="0.01"
+                  placeholder="25.00"
+                  value="25.00"
+                  required
+                />
+              </div>
+              <div class="field">
+                <label for="points"
+                  >Points Required <span aria-hidden="true">*</span></label
+                ><input
+                  id="points"
+                  name="points"
+                  type="number"
+                  min="1"
+                  step="1"
+                  placeholder="2000"
+                  value="2000"
+                  required
+                />
+              </div>
+            </div>
+            <div class="form-actions">
+              <button class="button" type="submit">Save Changes</button
+              ><a class="button secondary" href="card-list.php">Cancel</a>
+            </div>
+          </form>
+          <p class="demo-note">
+            This demo returns to the gift card list. Changes are not saved.
+          </p>
+        </section>
+        <aside class="form-aside">
+          <span class="eyebrow">A LITTLE SOMETHING EXTRA</span>
+          <h2>Great rewards start here.</h2>
+          <img src="images/gift-card.png" alt="Red rewards gift card" />
+          <p>
+            Give every reward a clear name, category, value, and points
+            requirement.
+          </p>
+        </aside>
+      </div>
+    </main>
+    <footer class="site-footer">
+      <span>Air Asia Rewards Redemption System</span
+      ><span>IS 6465 · Static coursework prototype</span>
+    </footer>
+  </body>
+</html>

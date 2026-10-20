@@ -1,3 +1,163 @@
 <!DOCTYPE html>
-<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Gift Cards | Air Asia</title><link rel="stylesheet" href="css/styles.css"></head><body><a class="skip-link" href="#main">Skip to content</a>
-<header class="site-header"><div class="header-inner"><a class="brand" href="card-list.php" aria-label="Air Asia Rewards gift cards"><span class="brand-mark">AirAsia</span><span><strong>Air Asia Rewards</strong><small>Gift Card Redemption</small></span></a><nav aria-label="Main navigation"><a href="card-list.php">Gift Cards</a><a href="login.php">Sign out</a></nav></div></header><main id="main"><section class="page-heading"><div><span class="eyebrow">DISCOVER YOUR NEXT REWARD</span><h1>Gift Cards</h1><p class="muted">Explore six gift cards from your favorite brands.</p></div><a class="button" href="card-add.php">+ Add Gift Card</a></section><div class="card-grid"><article class="gift-card"><a class="card-image" href="card-details.php" aria-label="View sample gift card details for Amazon"><img src="images/gift-card.png" alt="Gift card illustration"><span class="merchant">Amazon</span></a><div class="card-body"><span class="category">Retail</span><h2><a href="card-details.php">Amazon Gift Card</a></h2><p class="points">2,000 <span>pts</span></p><a class="text-link" href="card-details.php">View details <span aria-hidden="true">→</span></a></div></article><article class="gift-card"><a class="card-image" href="card-details.php" aria-label="View sample gift card details for Starbucks"><img src="images/gift-card.png" alt="Gift card illustration"><span class="merchant">Starbucks</span></a><div class="card-body"><span class="category">Dining</span><h2><a href="card-details.php">Starbucks Gift Card</a></h2><p class="points">1,500 <span>pts</span></p><a class="text-link" href="card-details.php">View details <span aria-hidden="true">→</span></a></div></article><article class="gift-card"><a class="card-image" href="card-details.php" aria-label="View sample gift card details for iTunes"><img src="images/gift-card.png" alt="Gift card illustration"><span class="merchant">iTunes</span></a><div class="card-body"><span class="category">Entertainment</span><h2><a href="card-details.php">iTunes Gift Card</a></h2><p class="points">2,500 <span>pts</span></p><a class="text-link" href="card-details.php">View details <span aria-hidden="true">→</span></a></div></article><article class="gift-card"><a class="card-image" href="card-details.php" aria-label="View sample gift card details for Best Buy"><img src="images/gift-card.png" alt="Gift card illustration"><span class="merchant">Best Buy</span></a><div class="card-body"><span class="category">Retail</span><h2><a href="card-details.php">Best Buy Gift Card</a></h2><p class="points">2,000 <span>pts</span></p><a class="text-link" href="card-details.php">View details <span aria-hidden="true">→</span></a></div></article><article class="gift-card"><a class="card-image" href="card-details.php" aria-label="View sample gift card details for Walmart"><img src="images/gift-card.png" alt="Gift card illustration"><span class="merchant">Walmart</span></a><div class="card-body"><span class="category">Retail</span><h2><a href="card-details.php">Walmart Gift Card</a></h2><p class="points">1,800 <span>pts</span></p><a class="text-link" href="card-details.php">View details <span aria-hidden="true">→</span></a></div></article><article class="gift-card"><a class="card-image" href="card-details.php" aria-label="View sample gift card details for Target"><img src="images/gift-card.png" alt="Gift card illustration"><span class="merchant">Target</span></a><div class="card-body"><span class="category">Retail</span><h2><a href="card-details.php">Target Gift Card</a></h2><p class="points">2,000 <span>pts</span></p><a class="text-link" href="card-details.php">View details <span aria-hidden="true">→</span></a></div></article></div><p class="demo-note">All cards open the same Amazon sample details page in this static prototype.</p></main><footer class="site-footer"><span>Air Asia Rewards Redemption System</span><span>IS 6465 · Static coursework prototype</span></footer></body></html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Gift Cards | Air Asia</title>
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <header class="site-header">
+      <div class="header-inner">
+        <a
+          class="brand"
+          href="card-list.php"
+          aria-label="Air Asia Rewards gift cards"
+          ><span class="brand-mark">AirAsia</span
+          ><span
+            ><strong>Air Asia Rewards</strong
+            ><small>Gift Card Redemption</small></span
+          ></a
+        >
+        <nav aria-label="Main navigation">
+          <a href="card-list.php">Gift Cards</a><a href="login.php">Sign out</a>
+        </nav>
+      </div>
+    </header>
+    <main id="main">
+      <section class="page-heading">
+        <div>
+          <span class="eyebrow">DISCOVER YOUR NEXT REWARD</span>
+          <h1>Gift Cards</h1>
+          <p class="muted">Explore six gift cards from your favorite brands.</p>
+        </div>
+        <a class="button" href="card-add.php">+ Add Gift Card</a>
+      </section>
+      <div class="card-grid">
+        <article class="gift-card">
+          <a
+            class="card-image"
+            href="card-details.php"
+            aria-label="View sample gift card details for Amazon"
+            ><img
+              src="images/gift-card.png"
+              alt="Gift card illustration"
+            /><span class="merchant">Amazon</span></a
+          >
+          <div class="card-body">
+            <span class="category">Retail</span>
+            <h2><a href="card-details.php">Amazon Gift Card</a></h2>
+            <p class="points">2,000 <span>pts</span></p>
+            <a class="text-link" href="card-details.php"
+              >View details <span aria-hidden="true">→</span></a
+            >
+          </div>
+        </article>
+        <article class="gift-card">
+          <a
+            class="card-image"
+            href="card-details.php"
+            aria-label="View sample gift card details for Starbucks"
+            ><img
+              src="images/gift-card.png"
+              alt="Gift card illustration"
+            /><span class="merchant">Starbucks</span></a
+          >
+          <div class="card-body">
+            <span class="category">Dining</span>
+            <h2><a href="card-details.php">Starbucks Gift Card</a></h2>
+            <p class="points">1,500 <span>pts</span></p>
+            <a class="text-link" href="card-details.php"
+              >View details <span aria-hidden="true">→</span></a
+            >
+          </div>
+        </article>
+        <article class="gift-card">
+          <a
+            class="card-image"
+            href="card-details.php"
+            aria-label="View sample gift card details for iTunes"
+            ><img
+              src="images/gift-card.png"
+              alt="Gift card illustration"
+            /><span class="merchant">iTunes</span></a
+          >
+          <div class="card-body">
+            <span class="category">Entertainment</span>
+            <h2><a href="card-details.php">iTunes Gift Card</a></h2>
+            <p class="points">2,500 <span>pts</span></p>
+            <a class="text-link" href="card-details.php"
+              >View details <span aria-hidden="true">→</span></a
+            >
+          </div>
+        </article>
+        <article class="gift-card">
+          <a
+            class="card-image"
+            href="card-details.php"
+            aria-label="View sample gift card details for Best Buy"
+            ><img
+              src="images/gift-card.png"
+              alt="Gift card illustration"
+            /><span class="merchant">Best Buy</span></a
+          >
+          <div class="card-body">
+            <span class="category">Retail</span>
+            <h2><a href="card-details.php">Best Buy Gift Card</a></h2>
+            <p class="points">2,000 <span>pts</span></p>
+            <a class="text-link" href="card-details.php"
+              >View details <span aria-hidden="true">→</span></a
+            >
+          </div>
+        </article>
+        <article class="gift-card">
+          <a
+            class="card-image"
+            href="card-details.php"
+            aria-label="View sample gift card details for Walmart"
+            ><img
+              src="images/gift-card.png"
+              alt="Gift card illustration"
+            /><span class="merchant">Walmart</span></a
+          >
+          <div class="card-body">
+            <span class="category">Retail</span>
+            <h2><a href="card-details.php">Walmart Gift Card</a></h2>
+            <p class="points">1,800 <span>pts</span></p>
+            <a class="text-link" href="card-details.php"
+              >View details <span aria-hidden="true">→</span></a
+            >
+          </div>
+        </article>
+        <article class="gift-card">
+          <a
+            class="card-image"
+            href="card-details.php"
+            aria-label="View sample gift card details for Target"
+            ><img
+              src="images/gift-card.png"
+              alt="Gift card illustration"
+            /><span class="merchant">Target</span></a
+          >
+          <div class="card-body">
+            <span class="category">Retail</span>
+            <h2><a href="card-details.php">Target Gift Card</a></h2>
+            <p class="points">2,000 <span>pts</span></p>
+            <a class="text-link" href="card-details.php"
+              >View details <span aria-hidden="true">→</span></a
+            >
+          </div>
+        </article>
+      </div>
+      <p class="demo-note">
+        All cards open the same Amazon sample details page in this static
+        prototype.
+      </p>
+    </main>
+    <footer class="site-footer">
+      <span>Air Asia Rewards Redemption System</span
+      ><span>IS 6465 · Static coursework prototype</span>
+    </footer>
+  </body>
+</html>
