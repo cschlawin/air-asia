@@ -1,0 +1,8 @@
+AI USE DISCLOSURE
+Tool: OpenAI ChatGPT / Codex
+Purpose: Review the two supplied Air Asia PDFs and generate the HTML, CSS, sample gift-card image, setup documentation, and workflow checks for this assignment.
+Prompt summary: Build five static pages saved as .php files with the specified filenames, four gift-card fields, and six required navigation paths. Use no PHP code, JavaScript, or database.
+Scope decision: The analysis and earlier wireframes mention additional customer, redemption, deletion, and role features. These were excluded to follow the current five-page assignment. Card ID was omitted because it is not one of the four requested editable fields.
+Implementation: HTML documents use PHP extensions only. Forms use GET to simulate navigation. Login inputs intentionally omit name attributes so sample credentials are not placed in the URL. No authentication, saving, or redemption is performed. All six list entries lead to the same Amazon sample details page, as permitted.
+Verification performed by AI: Checked filenames, local links and assets, form actions and field labels, prepopulated update values, and absence of PHP tags and scripts. Browser rendering could not be completed because the available runtime had no browser executable and the browser download failed. Responsive layouts require a final visual check in Codespaces.
+Student review: Review the source, test it in Codespaces, and revise this disclosure to match your own verification before submitting.
