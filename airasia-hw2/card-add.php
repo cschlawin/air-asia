@@ -1,3 +1,14 @@
+/* 
+ * Air Asia Rewards Gift Card Management System
+ * card-add.php
+ * 
+ * This file provides a form for adding new gift cards to the system.
+ * It includes fields for card name, type, value, and points required.
+ * All fields are required for submission.
+ * 
+ * Note: This is a static prototype. Changes are not saved.
+ */
+
 <!DOCTYPE html>
 <html lang="en">
   <head>

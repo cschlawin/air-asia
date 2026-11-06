@@ -1,3 +1,13 @@
+/* 
+ * Air Asia Rewards Gift Card Management System
+ * card-list.php
+ * 
+ * This file displays a list of available gift cards in the system.
+ * Each card includes details such as merchant name, category, points required, and a link to view more details.
+ * Users can also add new gift cards via the "Add Gift Card" button.
+ * 
+ * Note: This is a static prototype. Changes are not saved.
+ */
 <!DOCTYPE html>
 <html lang="en">
   <head>
