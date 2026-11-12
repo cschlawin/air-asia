@@ -226,9 +226,16 @@ that the website launched, active pages could be used, and a new gift card
 could be added, updated and deleted. This confirms the basic manual CRUD
 workflow; the assistant did not observe that browser session.
 
-**Still awaiting specific manual results:** database row counts after the
-test, the browser validation harness, invalid-input/ID handling, Delete
-Cancel behavior, and detailed image/responsive-layout checks. See
+**Student-provided SQLite evidence:** the Codespaces database contains
+21 gift cards and five accounts, including the newly added SchlaGift card.
+The output also shows Amazon Gift Card saved with value 30.0 and 3000 points.
+The 21-card count meets the minimum of 20; the added card may remain.
+These are local Codespaces results, not a verification that the changed
+database file has been committed to GitHub.
+
+**Still awaiting specific manual results:** the browser validation harness,
+invalid-input/ID handling, Delete Cancel behavior, selected-detail
+comparisons, and detailed image/responsive-layout checks. See
 test-report.md. Earlier automated CGI tests passed independently; the
 assistant's local Chromium attempt was blocked by socket restrictions.
 
