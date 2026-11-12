@@ -15,7 +15,8 @@ The PASS results below apply to **server-side execution through PHP CGI**.
 They do not mean a visual browser test or GitHub Codespaces run was completed.
 Chromium could not launch because socket creation was denied by the local
 execution environment; the browser connection attempt returned no usable
-session. Codespaces/manual browser verification is **NOT RUN / pending**.
+session. The assistant did not run Codespaces. A later student-reported
+manual check is recorded below; other browser checks remain pending.
 
 ## Required test cases
 
@@ -107,9 +108,33 @@ session. Codespaces/manual browser verification is **NOT RUN / pending**.
    two-decimal USD formatting. The old HTML-only constraints do not replace
    PHP validation. Retest: harness and invalid-input checks passed.
 
-## Manual Codespaces/browser checks still required
+## Student-reported Codespaces results
 
-These steps are instructions, not recorded results. Actual status: NOT RUN.
+Date: November 12, 2026. Tester: Cody Schlawin.
+Evidence: the student's report in this project conversation, not an
+assistant-observed browser session or screenshot.
+
+Student report: "I was able to launch the website, interact with active
+pages, add, update and delete a new card."
+
+| Check | Actual result | Status |
+| --- | --- | --- |
+| Codespaces launch and basic page navigation | Student reported that the site launched and active pages were usable. | PASS (student-reported basic smoke test) |
+| T04 basic Add workflow | Student reported adding a new card. Exact field values were not supplied. | PASS (student-reported basic operation) |
+| T05 basic Update workflow | Student reported updating the new card. Individual field/redirect assertions were not supplied. | PASS (student-reported basic operation) |
+| T06 basic Delete workflow | Student reported deleting the new card. Cancel and unconfirmed-POST behavior were not separately reported. | PASS (student-reported basic operation) |
+| SQLite access and table listing | Earlier supplied terminal output showed rewards.db opened and .tables returned ACCOUNT and GIFTCARD. | PASS (student-provided terminal evidence) |
+
+These results supplement the detailed automated tests rather than asserting
+that every manual test substep passed. Post-test row counts, browser harness
+results, invalid inputs/IDs, Delete Cancel behavior, selected-detail
+comparisons, and detailed images/mobile layout still need specific results.
+
+## Manual Codespaces/browser checklist
+
+Basic launch/navigation and Add/Update/Delete were reported successful as
+noted above. The following checklist retains all steps for reference;
+unreported substeps remain pending.
 
 1. Open the repository in Codespaces; pull main, verify PHP 8 and pdo_sqlite,
    and run the setup/count checks in README. Start the server on port 8000.
