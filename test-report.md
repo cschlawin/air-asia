@@ -126,9 +126,38 @@ pages, add, update and delete a new card."
 | SQLite access and table listing | Earlier supplied terminal output showed rewards.db opened and .tables returned ACCOUNT and GIFTCARD. | PASS (student-provided terminal evidence) |
 
 These results supplement the detailed automated tests rather than asserting
-that every manual test substep passed. Post-test row counts, browser harness
+that every manual test substep passed. Database counts and saved records
+are confirmed by the additional terminal evidence below. Browser harness
 results, invalid inputs/IDs, Delete Cancel behavior, selected-detail
 comparisons, and detailed images/mobile layout still need specific results.
+
+### Database validation evidence supplied by the student
+
+The later Codespaces terminal transcript confirms SQLite 3.53.4 opened
+rewards.db and reported the following results:
+
+| Check | Actual result | Status |
+| --- | --- | --- |
+| Required tables | .tables lists ACCOUNT and GIFTCARD. | PASS |
+| Gift-card schema | .schema GIFTCARD matches the required five attributes, generated primary key, required strings and numeric checks. | PASS |
+| Gift-card minimum count | SELECT COUNT(*) FROM GIFTCARD returned 21. | PASS (minimum 20) |
+| Account minimum count | SELECT COUNT(*) FROM ACCOUNT returned 5. | PASS (minimum 5) |
+| Persisted new record | cardId 21: SchlaGift, Entertainment, cardValue 1000000000.0, points 4. | PASS (record persisted; value/points meet the documented positive-number rules) |
+| Persisted existing-card change | cardId 1: Amazon Gift Card, cardValue 30.0, points 3000. | PASS (saved values visible in SQLite) |
+
+The student confirmed the 21-card total is intentional because a new card
+was retained. There is no requirement to remove it. The unusually large
+value and small points amount are allowed by the current documented rules;
+no maximum value or value-to-points exchange rule was specified.
+
+The initial query SELECT * FROM GIFTCARDS failed because the approved table
+name is singular: GIFTCARD. The corrected query succeeded. This was a query
+typo, not an application defect; no schema rename or code change is needed.
+
+Evidence scope: these results describe the student's local Codespaces
+database. They do not establish that its changed rewards.db has been
+committed/pushed to GitHub. The assistant did not modify the database in
+response to this evidence.
 
 ## Manual Codespaces/browser checklist
 
@@ -138,7 +167,7 @@ unreported substeps remain pending.
 
 1. Open the repository in Codespaces; pull main, verify PHP 8 and pdo_sqlite,
    and run the setup/count checks in README. Start the server on port 8000.
-2. Open `/card-list.php` directly without logging in. Confirm all 20 cards
+2. Open `/card-list.php` directly without logging in. Confirm all current cards (21 in the latest student check)
    display names, points and images with no broken layout on desktop/mobile.
 3. Open two different cards and confirm the details differ and show all
    five attributes. Use List/Add navigation and each Back/Cancel link.
@@ -147,8 +176,8 @@ unreported substeps remain pending.
    preservation for invalid submissions (disable native browser validation
    if intentionally testing server rejection).
 5. Open Delete, cancel and verify the card remains. Then confirm deletion;
-   check it disappears and the original 20 cards remain. Do not delete a
-   seeded card while checking the submission's minimum count.
+   check that only the selected test card disappears and at least 20 cards
+   remain. The student's retained SchlaGift card does not need to be removed.
 6. Visit `card-details.php?card_id=abc` and `?card_id=999999`; confirm helpful
    errors, then open `/tests/validation-tests.php` and confirm 29/29 PASS.
 7. Record actual browser/Codespaces outcomes here, including any fixes and
