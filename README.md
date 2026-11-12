@@ -233,17 +233,25 @@ The 21-card count meets the minimum of 20; the added card may remain.
 These are local Codespaces results, not a verification that the changed
 database file has been committed to GitHub.
 
-**Still awaiting specific manual results:** the browser validation harness,
-invalid-input/ID handling, Delete Cancel behavior, selected-detail
-comparisons, and detailed image/responsive-layout checks. See
-test-report.md. Earlier automated CGI tests passed independently; the
-assistant's local Chromium attempt was blocked by socket restrictions.
+**Additional browser checks completed:** the student's screenshot shows
+29/29 harness checks passing. Screenshots show the expected errors for
+card_id=abc and card_id=999999; the student confirmed both return links.
+Delete Cancel left SchlaGift present. Blank required input and negative
+points were blocked by browser messages. The student also confirmed pages
+were visible at a narrowed mobile width without reporting layout problems.
+See test-report.md for the evidence and scope of these checks.
+
+Browser-required/minimum messages test native HTML validation; independent
+PHP CLI/CGI tests cover server-side rejection and safe input retention.
+The assistant did not directly control the private Codespaces browser.
+Exact device widths, every card's browser details and every crafted POST
+case were not individually repeated in the student's manual session.
 
 ## Instructor review and submission
 
 The source, populated database, tests and documentation are in this
 repository. Read ai-use.txt for preserved prompts/history and the HW3 AI
-contribution record. Review and understand the code, run the Codespaces
-checks in test-report.md, and record your own actual browser results before
-submitting the repository link in Canvas. No Canvas submission has been
+contribution record. Review and understand the code and the recorded results in test-report.md.
+Commit/push any local database changes before submitting the repository
+link in Canvas. No Canvas submission has been
 performed by the assistant.
