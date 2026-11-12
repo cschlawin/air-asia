@@ -88,8 +88,8 @@ manual check is recorded below; other browser checks remain pending.
   suite left ACCOUNT data unchanged.
 - Temporarily removing the test database produced a friendly 503 response,
   without creating an empty replacement or printing raw connection details.
-- All source/asset URLs in List resolve to actual project files. Image
-  appearance and responsive visual layout still need a browser check.
+- All source/asset URLs in List resolve to actual project files. The later
+  student-reported narrow-layout check is documented below.
 
 ## Defects and review decisions
 
@@ -122,14 +122,14 @@ pages, add, update and delete a new card."
 | Codespaces launch and basic page navigation | Student reported that the site launched and active pages were usable. | PASS (student-reported basic smoke test) |
 | T04 basic Add workflow | Student reported adding a new card. Exact field values were not supplied. | PASS (student-reported basic operation) |
 | T05 basic Update workflow | Student reported updating the new card. Individual field/redirect assertions were not supplied. | PASS (student-reported basic operation) |
-| T06 basic Delete workflow | Student reported deleting the new card. Cancel and unconfirmed-POST behavior were not separately reported. | PASS (student-reported basic operation) |
+| T06 basic Delete workflow | Student reported deleting the new card. Cancel was later confirmed to preserve SchlaGift; crafted unconfirmed POSTs were tested automatically. | PASS (student-reported basic operation) |
 | SQLite access and table listing | Earlier supplied terminal output showed rewards.db opened and .tables returned ACCOUNT and GIFTCARD. | PASS (student-provided terminal evidence) |
 
 These results supplement the detailed automated tests rather than asserting
 that every manual test substep passed. Database counts and saved records
-are confirmed by the additional terminal evidence below. Browser harness
-results, invalid inputs/IDs, Delete Cancel behavior, selected-detail
-comparisons, and detailed images/mobile layout still need specific results.
+are confirmed by the terminal evidence below. Additional browser results
+and their evidence are recorded in the following section. Assertions not
+specifically reported by the student are not represented as manual passes.
 
 ### Database validation evidence supplied by the student
 
@@ -159,11 +159,38 @@ database. They do not establish that its changed rewards.db has been
 committed/pushed to GitHub. The assistant did not modify the database in
 response to this evidence.
 
+### Additional browser checks completed by the student
+
+Date: November 12, 2026. Evidence: supplied screenshots and direct
+student confirmations in the project conversation.
+
+| Check | Actual result and evidence | Status |
+| --- | --- | --- |
+| T01 browser validation harness | Full-page screenshot shows 29/29 passed and PASS on every listed case. | PASS |
+| T08 malformed ID | Screenshot for card_id=abc shows the valid-positive-integer message; student confirmed return to List. | PASS |
+| T08 nonexistent ID | Screenshot for card_id=999999 shows the card-not-found message; student confirmed return to List. | PASS |
+| T06 Delete Cancel | Student confirmed Cancel worked and SchlaGift was still present. No count was re-queried after this particular check. | PASS (card-preservation behavior) |
+| T07 blank required field | Student reported submission blocked with "Please fill out this field". | PASS (native browser validation) |
+| T07 negative points | Student reported "Value must be greater than or equal to 1" after entering -1. | PASS (native browser validation) |
+| Narrow/mobile layout | After instructions to inspect List, Details and Add at narrow width, student reported all pages were visible in a narrowed mobile view. No layout defect was reported. | PASS (student-reported visual smoke test) |
+
+The required-field and minimum-value browser checks are not proof that
+crafted POST requests were rejected on the server. That behavior, along
+with safe value retention, was independently exercised in the recorded
+automated PHP CGI tests. Browser error screenshots visibly show the expected
+messages without PHP warnings or raw database errors.
+
+No new code defect was reported during these manual checks. Exact viewport
+dimensions, every card's browser details, all navigation links, and every
+crafted POST case were not individually evidenced in the manual session;
+the earlier detailed automated tests remain the evidence for those
+applicable server-side assertions. No additional manual PASS is inferred.
+
 ## Manual Codespaces/browser checklist
 
-Basic launch/navigation and Add/Update/Delete were reported successful as
-noted above. The following checklist retains all steps for reference;
-unreported substeps remain pending.
+The reported manual checks are recorded above. This checklist is retained
+as a repeatable reference; it is not a claim that every listed substep was
+individually observed. No browser/Codespaces code defect remains reported.
 
 1. Open the repository in Codespaces; pull main, verify PHP 8 and pdo_sqlite,
    and run the setup/count checks in README. Start the server on port 8000.
