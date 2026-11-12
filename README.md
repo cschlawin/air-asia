@@ -5,6 +5,61 @@ The original application remains in **airasia-hw2/**; its name is retained
 so existing links and Codespaces commands continue to work. There is one
 application root and one database.
 
+## Quick database access
+
+Run these commands in the **Codespaces terminal**, starting in the
+repository root (`/workspaces/air-asia`):
+
+```bash
+cd airasia-hw2/database
+sqlite3 rewards.db
+```
+
+At the `sqlite>` prompt, inspect the database:
+
+```sql
+.tables
+.schema GIFTCARD
+.headers on
+.mode column
+SELECT * FROM GIFTCARD LIMIT 5;
+SELECT COUNT(*) AS account_count FROM ACCOUNT;
+SELECT COUNT(*) AS gift_card_count FROM GIFTCARD;
+.quit
+```
+
+`.tables` should list `ACCOUNT` and `GIFTCARD`. The supplied seed database
+contains five accounts and 20 gift cards; counts can change after CRUD tests.
+Commands beginning with a dot are SQLite commands, not Bash commands.
+
+After `.quit`, you are back in Bash in the database folder. To initialize
+the tables or deliberately rerun the sample seed data from that folder:
+
+```bash
+sqlite3 rewards.db < schema.sql
+sqlite3 rewards.db < seed.sql
+```
+
+The committed database is already initialized; these setup commands are
+optional. Rerunning the seed preserves existing IDs but can restore deleted
+sample records. Use `sqlite3` only once per command. Bash resolves
+`< schema.sql` relative to your current folder, so running that short
+command from the repository root causes “schema.sql: No such file or
+directory.”
+
+To return to the repository root after using the database folder:
+
+```bash
+cd ../..
+```
+
+Alternatively, open the database directly **from the repository root**
+without changing folders:
+
+```bash
+sqlite3 airasia-hw2/database/rewards.db
+```
+
 ## Scope
 
 Gift-card list, selected details, add, update and confirmed delete are
