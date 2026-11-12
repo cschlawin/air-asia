@@ -1,5 +1,5 @@
 <?php
-// UC-01 / FR-01: read the saved catalog; authentication is HW4 work.
+// UC-01 / FR-01: read the saved catalog;
 require_once __DIR__ . '/includes/db.php';
 if ($dbError !== null) {
   show_error($dbError, 503);
