@@ -227,3 +227,87 @@ revisions. This record does not claim that the student independently wrote
 the generated code or completed unreported tests. The student should
 review and understand the code, complete browser testing, and ensure this
 disclosure meets the instructor's AI-use requirements.
+
+
+HW3 DEVELOPMENT RECORD - NOVEMBER 12, 2026
+
+This section updates the scope and verification status for HW3. The earlier
+HW2 record above is preserved as history; its static-only behavior and
+October browser limitations do not describe the new CRUD implementation.
+The disclosure was moved from airasia-hw2/ai-use.txt to the repository root
+as required by the HW3 instructions. No duplicate AI-use file was retained.
+
+AI tool: OpenAI ChatGPT / Codex (gpt-6.1-sol).
+
+User prompt excerpts (verbatim text, presentation formatting normalized):
+"Make targeted changes to the existing Air Asia Rewards Gift Card website
+for IS 6465 HW3 using PHP, SQLite, PDO, HTML, and CSS. Follow the approved
+SAD requirements, preserve existing work, and create only missing assignment
+files."
+"This is a course project, not a production rebuild."
+"Inspect the actual repository and relevant code before making changes."
+"I want a functioning HW3 submission, not a larger application or a
+replacement for work I have already completed."
+
+Prompt summary (not a verbatim full transcript):
+The user supplied a detailed HW3 application-builder brief directing the
+assistant to read the original requirements, HW3 instructions, populated
+SAD, wireframes and supporting analysis; inspect the actual repository;
+retain the application root, login and assets; implement only gift-card
+CRUD with PHP/PDO/SQLite; create missing templates, connection, validation,
+SQL scripts/database, pure validation harness and required documentation;
+validate/escape untrusted values, confirm deletion through POST, return to
+selected details after update, preserve AI-use history and test actual
+behavior without claiming an unperformed push, Codespaces run or submission.
+The required database is ACCOUNT plus GIFTCARD with five and 20 seed rows.
+Authentication, customers and redemption must remain deferred to HW4.
+
+Assistant work summary (not a verbatim chat transcript):
+Inspected main at 85969b7dbba771d3062bba804d4f1b5ff172c676, all existing
+source files and the supplied documents before editing. Reported which
+files existed and which were missing. Preserved the single airasia-hw2
+application root, unchanged login.php/image/editor settings, existing
+layout and original CSS; added limited CSS for dynamic values/errors/tests.
+Replaced static gift-card content/GET submissions with PDO-backed CRUD and
+shared includes. Created the missing delete confirmation, database SQL and
+populated SQLite file, validation harness and root-level test report.
+Updated README and retained this prior AI-use record. No USER/REDEMPTION
+tables, login dependencies, sessions or JavaScript were introduced.
+
+AI suggestions tested, revised or rejected:
+- Retain the existing Retail/Dining/Entertainment/Travel dropdown choices
+  as one documented allowlist rather than inventing a source business rule.
+  Verified all allowlisted types in the validation harness and seed data.
+- Use primary-key conflict handling in seed.sql rather than deleting or
+  replacing useful data. Tested schema/seed reruns and an edited seed row:
+  counts stayed stable and the edit was preserved.
+- Use CGI tests when Chromium was blocked. These were actually run but
+  explicitly not represented as visual browser or Codespaces tests.
+- An initial test expected literal H&M in generated HTML. Revised the test
+  to decode escaped text; kept safe HTML escaping in the application.
+
+Verification actually performed:
+PHP 8.4.27 with PDO SQLite; all 12 PHP files passed syntax checks; all 29
+validation-harness cases passed in CLI and CGI. The pure harness did not
+connect to or change the database, verified using bytes/rows. T01-T08 CGI
+workflow checks passed on an isolated application/database copy: list and
+all 20 detail records, Add/Update/Delete redirects and persistence, GET and
+Cancel safety, rejection of unconfirmed deletion, 26 invalid form requests,
+66 invalid-ID GET/POST requests, escaping of quote/script-containing names,
+safe input preservation, and friendly database-unavailable handling.
+Schema/seed reruns were nonduplicating; SQLite integrity_check returned ok.
+The submitted database retains 20 GIFTCARD records and five ACCOUNT records.
+See test-report.md for exact steps, expected/actual results and limitations.
+
+Not verified or performed:
+No successful browser visual regression or Codespaces execution was obtained
+in this session. Chromium socket creation was blocked; the connected-browser
+attempt did not return a usable session. The student must complete the
+manual checks and record actual results. No Canvas submission or instructor
+approval is claimed. GitHub publishing is verified separately after commit.
+
+Student responsibility:
+Review and understand the generated PHP/SQL, run the application in
+Codespaces, complete manual browser checks, and comply with the instructor's
+AI-use policy. This record does not claim independent student authorship
+of AI-generated code or tests the student has not reported completing.

@@ -517,3 +517,80 @@ dd.points {
     flex-wrap: wrap;
   }
 }
+
+/* HW3 additions: errors, long database values, and validation results. */
+.field-error {
+  color: #aa1118;
+  font-size: 13px;
+  margin: 7px 0 0;
+}
+.error-summary {
+  background: #fff1ef;
+  border-left: 4px solid var(--red);
+  padding: 12px 16px;
+}
+[aria-invalid="true"] {
+  border-color: var(--red);
+}
+.merchant,
+.detail-merchant {
+  right: 22px;
+  overflow-wrap: anywhere;
+  line-height: 1.2;
+}
+.merchant {
+  font-size: 20px;
+}
+.detail-merchant {
+  right: 48px;
+  font-size: 26px;
+}
+.card-body h2,
+.detail-copy h1,
+.specs dd {
+  overflow-wrap: anywhere;
+}
+.detail-copy,
+.form-panel,
+.card-grid > * {
+  min-width: 0;
+}
+.specs dt {
+  flex-shrink: 0;
+}
+.return-link {
+  margin-top: 24px;
+  margin-bottom: 0;
+}
+.test-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+.test-table th,
+.test-table td {
+  padding: 12px;
+  border-bottom: 1px solid var(--line);
+  text-align: left;
+  overflow-wrap: anywhere;
+}
+.test-pass {
+  color: #176335;
+  font-weight: 700;
+}
+.test-fail {
+  color: #aa1118;
+  font-weight: 700;
+}
+@media (max-width: 640px) {
+  .header-inner {
+    flex-wrap: wrap;
+  }
+  .details-layout .form-actions {
+    flex-wrap: wrap;
+  }
+  .detail-merchant {
+    left: 40px;
+    right: 40px;
+    font-size: 22px;
+  }
+}

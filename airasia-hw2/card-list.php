@@ -1,173 +1,62 @@
-/* 
- * Air Asia Rewards Gift Card Management System
- * card-list.php
- * 
- * This file displays a list of available gift cards in the system.
- * Each card includes details such as merchant name, category, points required, and a link to view more details.
- * Users can also add new gift cards via the "Add Gift Card" button.
- * 
- * Note: This is a static prototype. Changes are not saved.
- */
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Gift Cards | Air Asia</title>
-    <link rel="stylesheet" href="css/styles.css" />
-  </head>
-  <body>
-    <a class="skip-link" href="#main">Skip to content</a>
-    <header class="site-header">
-      <div class="header-inner">
-        <a
-          class="brand"
-          href="card-list.php"
-          aria-label="Air Asia Rewards gift cards"
-          ><span class="brand-mark">AirAsia</span
-          ><span
-            ><strong>Air Asia Rewards</strong
-            ><small>Gift Card Redemption</small></span
-          ></a
-        >
-        <nav aria-label="Main navigation">
-          <a href="card-list.php">Gift Cards</a><a href="login.php">Sign out</a>
-        </nav>
-      </div>
-    </header>
-    <main id="main">
+<?php
+// UC-01 / FR-01: read the saved catalog; authentication is HW4 work.
+require_once __DIR__ . '/includes/db.php';
+if ($dbError !== null) {
+  show_error($dbError, 503);
+}
+try {
+  $cards = $pdo->query(
+    'SELECT cardId, cardName, cardType, cardValue, points '
+    . 'FROM GIFTCARD ORDER BY cardId'
+  )->fetchAll();
+} catch (PDOException $exception) {
+  error_log('Air Asia list: ' . $exception->getMessage());
+  show_error('Unable to load gift cards. Please try again later.', 503);
+}
+$pageTitle = 'Gift Cards';
+require_once __DIR__ . '/includes/header.php';
+require_once __DIR__ . '/includes/nav.php';
+?>
       <section class="page-heading">
         <div>
           <span class="eyebrow">DISCOVER YOUR NEXT REWARD</span>
           <h1>Gift Cards</h1>
-          <p class="muted">Explore six gift cards from your favorite brands.</p>
+          <p class="muted">Explore gift cards from your favorite brands.</p>
         </div>
         <a class="button" href="card-add.php">+ Add Gift Card</a>
       </section>
-      <div class="card-grid">
-        <article class="gift-card">
-          <a
-            class="card-image"
-            href="card-details.php"
-            aria-label="View sample gift card details for Amazon"
-            ><img
-              src="images/gift-card.png"
-              alt="Gift card illustration"
-            /><span class="merchant">Amazon</span></a
-          >
-          <div class="card-body">
-            <span class="category">Retail</span>
-            <h2><a href="card-details.php">Amazon Gift Card</a></h2>
-            <p class="points">2,000 <span>pts</span></p>
-            <a class="text-link" href="card-details.php"
-              >View details <span aria-hidden="true">→</span></a
-            >
-          </div>
-        </article>
-        <article class="gift-card">
-          <a
-            class="card-image"
-            href="card-details.php"
-            aria-label="View sample gift card details for Starbucks"
-            ><img
-              src="images/gift-card.png"
-              alt="Gift card illustration"
-            /><span class="merchant">Starbucks</span></a
-          >
-          <div class="card-body">
-            <span class="category">Dining</span>
-            <h2><a href="card-details.php">Starbucks Gift Card</a></h2>
-            <p class="points">1,500 <span>pts</span></p>
-            <a class="text-link" href="card-details.php"
-              >View details <span aria-hidden="true">→</span></a
-            >
-          </div>
-        </article>
-        <article class="gift-card">
-          <a
-            class="card-image"
-            href="card-details.php"
-            aria-label="View sample gift card details for iTunes"
-            ><img
-              src="images/gift-card.png"
-              alt="Gift card illustration"
-            /><span class="merchant">iTunes</span></a
-          >
-          <div class="card-body">
-            <span class="category">Entertainment</span>
-            <h2><a href="card-details.php">iTunes Gift Card</a></h2>
-            <p class="points">2,500 <span>pts</span></p>
-            <a class="text-link" href="card-details.php"
-              >View details <span aria-hidden="true">→</span></a
-            >
-          </div>
-        </article>
-        <article class="gift-card">
-          <a
-            class="card-image"
-            href="card-details.php"
-            aria-label="View sample gift card details for Best Buy"
-            ><img
-              src="images/gift-card.png"
-              alt="Gift card illustration"
-            /><span class="merchant">Best Buy</span></a
-          >
-          <div class="card-body">
-            <span class="category">Retail</span>
-            <h2><a href="card-details.php">Best Buy Gift Card</a></h2>
-            <p class="points">2,000 <span>pts</span></p>
-            <a class="text-link" href="card-details.php"
-              >View details <span aria-hidden="true">→</span></a
-            >
-          </div>
-        </article>
-        <article class="gift-card">
-          <a
-            class="card-image"
-            href="card-details.php"
-            aria-label="View sample gift card details for Walmart"
-            ><img
-              src="images/gift-card.png"
-              alt="Gift card illustration"
-            /><span class="merchant">Walmart</span></a
-          >
-          <div class="card-body">
-            <span class="category">Retail</span>
-            <h2><a href="card-details.php">Walmart Gift Card</a></h2>
-            <p class="points">1,800 <span>pts</span></p>
-            <a class="text-link" href="card-details.php"
-              >View details <span aria-hidden="true">→</span></a
-            >
-          </div>
-        </article>
-        <article class="gift-card">
-          <a
-            class="card-image"
-            href="card-details.php"
-            aria-label="View sample gift card details for Target"
-            ><img
-              src="images/gift-card.png"
-              alt="Gift card illustration"
-            /><span class="merchant">Target</span></a
-          >
-          <div class="card-body">
-            <span class="category">Retail</span>
-            <h2><a href="card-details.php">Target Gift Card</a></h2>
-            <p class="points">2,000 <span>pts</span></p>
-            <a class="text-link" href="card-details.php"
-              >View details <span aria-hidden="true">→</span></a
-            >
-          </div>
-        </article>
-      </div>
-      <p class="demo-note">
-        All cards open the same Amazon sample details page in this static
-        prototype.
-      </p>
-    </main>
-    <footer class="site-footer">
-      <span>Air Asia Rewards Redemption System</span
-      ><span>IS 6465 · Static coursework prototype</span>
-    </footer>
-  </body>
-</html>
+      <?php if ($cards === []): ?>
+        <section class="panel form-panel">
+          <h2>No gift cards yet</h2>
+          <p>Add a gift card to start your catalog.</p>
+        </section>
+      <?php else: ?>
+        <div class="card-grid">
+          <?php foreach ($cards as $card): ?>
+            <article class="gift-card">
+              <a class="card-image"
+                href="card-details.php?card_id=<?= e($card['cardId']) ?>"
+                aria-label="View <?= e($card['cardName']) ?> details">
+                <img src="images/gift-card.png" alt="Rewards gift card">
+                <span class="merchant"><?= e($card['cardName']) ?></span>
+              </a>
+              <div class="card-body">
+                <span class="category"><?= e($card['cardType']) ?></span>
+                <h2>
+                  <a href="card-details.php?card_id=<?= e($card['cardId']) ?>">
+                    <?= e($card['cardName']) ?>
+                  </a>
+                </h2>
+                <p class="points">
+                  <?= e(number_format($card['points'])) ?> <span>pts</span>
+                </p>
+                <a class="text-link"
+                  href="card-details.php?card_id=<?= e($card['cardId']) ?>">
+                  View details <span aria-hidden="true">→</span>
+                </a>
+              </div>
+            </article>
+          <?php endforeach; ?>
+        </div>
+      <?php endif; ?>
+<?php require_once __DIR__ . '/includes/footer.php'; ?>
