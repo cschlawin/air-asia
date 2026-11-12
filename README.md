@@ -221,11 +221,16 @@ Codespaces steps. Automated PHP 8.4.27 CLI/CGI and SQLite tests passed in the
 assistant's Linux workspace on November 12, 2026 using an isolated copy.
 The committed database retains 20 gift cards and five accounts.
 
-**Not yet verified:** a Codespaces run and visual/click-through browser
-regression. The local Chromium attempt failed because the execution
-sandbox blocks its sockets; the connected browser did not return a usable
-session. CGI tests exercise actual PHP requests, headers, redirects and
-SQLite writes, but they are not browser screenshots or a Codespaces run.
+**Student-reported Codespaces check (November 12, 2026):** Cody confirmed
+that the website launched, active pages could be used, and a new gift card
+could be added, updated and deleted. This confirms the basic manual CRUD
+workflow; the assistant did not observe that browser session.
+
+**Still awaiting specific manual results:** database row counts after the
+test, the browser validation harness, invalid-input/ID handling, Delete
+Cancel behavior, and detailed image/responsive-layout checks. See
+test-report.md. Earlier automated CGI tests passed independently; the
+assistant's local Chromium attempt was blocked by socket restrictions.
 
 ## Instructor review and submission
 
