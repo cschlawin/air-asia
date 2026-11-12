@@ -311,3 +311,32 @@ Review and understand the generated PHP/SQL, run the application in
 Codespaces, complete manual browser checks, and comply with the instructor's
 AI-use policy. This record does not claim independent student authorship
 of AI-generated code or tests the student has not reported completing.
+
+
+MANUAL BROWSER TEST FOLLOW-UP - NOVEMBER 12, 2026
+
+Cody performed the private Codespaces browser checks; the assistant guided
+the steps and reviewed supplied evidence rather than controlling that
+browser. The browser automation attempts were blocked by origin approval
+checks, so they are not claimed as successful automated browser tests.
+
+Evidence received:
+- Student report: site launched and basic Add/Update/Delete worked.
+- SQLite transcript: ACCOUNT and GIFTCARD present; 21 gift cards and five
+  accounts; SchlaGift persisted and Amazon changes visible.
+- Browser screenshot: validation harness reports 29/29 PASS.
+- Error-page screenshots and confirmation: malformed abc and nonexistent
+  999999 IDs show the expected messages and return links reach the list.
+- Student confirmation: Delete Cancel preserves SchlaGift.
+- Student reports: blank required input and points=-1 blocked with native
+  browser validation messages. Server validation was separately tested
+  using the previously recorded PHP CGI requests.
+- Student report: pages are visible at a narrowed mobile width, following
+  the List/Details/Add visual-check instructions; no layout defect reported.
+
+Updated README and test-report.md to replace superseded pending statements
+with these specific outcomes. No new code fix was required or invented.
+Exact viewport dimensions and unreported manual substeps are not claimed.
+Local Codespaces database changes still require their own Git commit/push
+if they have not already been saved to the remote repository. Canvas
+submission and instructor approval are not claimed.
